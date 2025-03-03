@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medisoft</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #result { margin-top: 20px; font-size: 18px; color: blue; }
+    </style>
 </head>
 
 <body>
@@ -48,14 +52,34 @@
                 });
 
                 function myFunction(element) {
-                var popup = element.querySelector(".popuptext");
-                if (popup.classList.contains("show")) {
-                    popup.classList.remove("show");
-                } else {
-                    document.querySelectorAll(".popuptext").forEach(p => p.classList.remove("show"));
-                    popup.classList.add("show");
-                }
-                }
+    var popup = element.querySelector(".popuptext");
+    
+    // Close any other open popups
+    document.querySelectorAll(".popuptext").forEach(p => {
+        if (p !== popup) {
+            p.classList.remove("show");
+        }
+    });
+
+    // Toggle current popup
+    popup.classList.toggle("show");
+
+    // Adjust position dynamically if content is long
+    if (popup.classList.contains("show")) {
+        let popupHeight = popup.offsetHeight;
+        let spaceAbove = element.getBoundingClientRect().top;
+        if (spaceAbove < popupHeight + 20) {
+            popup.style.bottom = "auto";
+            popup.style.top = "110%"; /* Moves below if not enough space above */
+        } else {
+            popup.style.bottom = "130%";
+            popup.style.top = "auto";
+        }
+    }
+}
+
+
+
 
 
 
@@ -130,23 +154,50 @@
     <section class="faq">
         <h2>Frequently Asked Questions</h2>
         <div class="faqbox">
-            <div class="popup" onclick="myFunction(this)"> <span>What is Medisoft?</span>
-                <span class="popuptext">A Simple Popup!</span>
+            <div class="popup" onclick="myFunction(this)">
+                <span>What is Medisoft?</span>
+                <div class="popuptext">
+                    <p>
+                        Medisoft is an innovative website designed to provide users with  
+                        comprehensive and accurate information about various diseases,  
+                        medical conditions, and health-related topics. 
+                    </p>
+                </div>
             </div>
         </div>
+        
+        
         <div class="faqbox">
             <div class="popup" onclick="myFunction(this)"> <span>What does Medisoft do?</span>
-                <span class="popuptext">A Simple Popup!</span>
+                <div class="popuptext">
+                    <p>
+                        The primary goal of Medisoft is to empower individuals by offering accessible, reliable, and 
+                        up-to-date health information at their fingertips. Medisoft aims to bridge the gap between medical 
+                        knowledge and everyday health management. 
+                    </p>
+                </div>            
             </div>
         </div>
+
         <div class="faqbox">
             <div class="popup" onclick="myFunction(this)"> <span>Will I find my disease?</span>
-                <span class="popuptext">A Simple Popup!</span>
-            </div>
+                <div class="popuptext">
+                    <p>
+                        Yes, you will find your disease. With advanced medical diagnostics and AI-powered tools, identifying 
+                        health conditions is easier than ever. Get accurate results and insights to understand your condition 
+                        better. 
+                    </p>
+                </div>
+             </div>
         </div>
         <div class="faqbox">
             <div class="popup" onclick="myFunction(this)"> <span>Is doctor consultancy available?</span>
-                <span class="popuptext">A Simple Popup!</span>
+                <div class="popuptext">
+                    <p>
+                        Yes, doctor consultancy is available. You can connect with medical professionals for expert advice, 
+                        diagnosis, and treatment recommendations, ensuring proper healthcare guidance whenever needed. 
+                    </p>
+                </div>            
             </div>
         </div>
         
