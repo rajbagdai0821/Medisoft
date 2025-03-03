@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .custom-file-upload {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        #preview {
+            margin-top: 20px;
+            max-width: 100%;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <label for="fileUpload" class="custom-file-upload">Choose Image</label>
+    <input type="file" id="fileUpload" accept="image/*">
+    <button id="uploadBtn">Upload Image</button>
+    <br>
+    <img id="preview" alt="Image Preview">
+
+    <script>
+        const fileInput = document.getElementById("fileUpload");
+        const uploadBtn = document.getElementById("uploadBtn");
+        const preview = document.getElementById("preview");
+
+        fileInput.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        uploadBtn.addEventListener("click", function() {
+            if (fileInput.files.length === 0) {
+                alert("Please select an image first!");
+            } else {
+                alert("Image uploaded successfully!");
+                fileInput.value = ""; // Reset file input
+                preview.style.display = "none"; // Hide the preview
+            }
+        });
+    </script>
+
+</body>
+</html>
