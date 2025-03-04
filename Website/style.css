@@ -228,27 +228,36 @@ section.first>div :nth-child(2) {
     max-width: 60vw; 
     margin: 34px auto;
     cursor: pointer;
-    position: relative;
+    position: relative; 
 }
 
-/* The actual popup */
+.faqbox {
+    position: relative;
+    margin-bottom: 20px; 
+
+.popup {
+    display: inline-block;
+    cursor: pointer;
+}
+
 .popup .popuptext {
     visibility: hidden;
-    width: 100%; 
-    max-width: 60vw; 
+    width: 100%;
+    max-width: 60vw;
     background-color: #282424;
     color: #fff;
     text-align: left;
     border-radius: 8px;
     padding: 16px;
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
     line-height: 1.5;
     white-space: normal;
+    z-index: 10; 
 }
 
 .popup .popuptext::after {
@@ -260,14 +269,12 @@ section.first>div :nth-child(2) {
     border-style: solid;
     border-color: transparent transparent #333 transparent;
 }
+
 .popuptext.show {
     visibility: visible;
-    opacity: 1.5;
+    opacity: 1;
     transform: translateY(5px);
 }
-
-
-
 
 footer {
     color: white;
@@ -279,10 +286,6 @@ footer {
 footer .questions {
     padding: 4px 0;
 }
-
-
-
-
 
 @media screen and (max-width: 1300px) {
 
@@ -334,8 +337,6 @@ footer .questions {
  
 
 }
-
-
 
 @media screen and (max-width: 1300px) {
 
