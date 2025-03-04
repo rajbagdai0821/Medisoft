@@ -68,8 +68,10 @@ button {
 }
 
 button1 {
-    color: rgb(15, 15, 15);
-    border: none;
+    background: linear-gradient(to right, #00c6fb, #005bea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;    border: none;
     border-radius: 4px;
     cursor: pointer;
 }
