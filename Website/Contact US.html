@@ -1,45 +1,59 @@
-<!DOCTYPE html>
-<html>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-<head>
-      <title>Contact US</title>
-      <link rel="stylesheet" href="Contact US.css">
-</head>
+.main {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+}
 
-<body>
-      <div class="main">
-            <h1>Medisoft</h1>
-            <h3>Enter your details</h3>
-            <form action="">
-                  <label for="first">
-                        Full Name:
-                  </label>
-                  <input type="text" 
-                         id="first" 
-                         name="first" 
-                         placeholder="Enter your Full Name" required>
+.main h2 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(to right, #00c6fb, #005bea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
 
-                  <label for="number">
-                        Mobile NO:
-                  </label>
-                </n>
-                  <input type="number"
-                         id="number" 
-                         name="number"
-                         placeholder="Enter your Mobile NO" required>
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: bold;
+}
 
-                  <div class="wrap">
-                        <button type="submit"
-                                onclick="solve()">
-                              Submit
-                        </button>
-                  </div>
-                  <p>
-                    For any query: 22ce111.tarang.bhatt@vvpedulink.ac.in
-                  </p>
-            </form>
-            
-      </div>
-</body>
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
 
-</html>
+button[type="submit"] {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(to right, #00c6fb, #005bea);
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+}
+
