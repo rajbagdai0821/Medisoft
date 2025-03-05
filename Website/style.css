@@ -225,15 +225,17 @@ section.first>div :nth-child(2) {
     justify-content: space-between;
     background-color: #2d2d2d;
     padding: 24px;
-    max-width: 60vw; 
+    max-width: 60vw; /* 🔥 Keep width consistent */
     margin: 34px auto;
     cursor: pointer;
-    position: relative; 
+    position: relative; /* Needed for absolute positioning of popup */
 }
 
+/* The actual popup */
 .faqbox {
     position: relative;
-    margin-bottom: 20px; 
+    margin-bottom: 20px; /* Add spacing between FAQ items */
+}
 
 .popup {
     display: inline-block;
@@ -257,9 +259,10 @@ section.first>div :nth-child(2) {
     transition: opacity 0.3s ease, transform 0.3s ease;
     line-height: 1.5;
     white-space: normal;
-    z-index: 10; 
+    z-index: 10; /* Ensure it appears on top */
 }
 
+/* Popup arrow */
 .popup .popuptext::after {
     content: "";
     position: absolute;
@@ -270,11 +273,15 @@ section.first>div :nth-child(2) {
     border-color: transparent transparent #333 transparent;
 }
 
+/* Show popup */
 .popuptext.show {
     visibility: visible;
     opacity: 1;
     transform: translateY(5px);
 }
+
+
+
 
 footer {
     color: white;
@@ -286,6 +293,10 @@ footer {
 footer .questions {
     padding: 4px 0;
 }
+
+
+
+
 
 @media screen and (max-width: 1300px) {
 
@@ -337,6 +348,8 @@ footer .questions {
  
 
 }
+
+
 
 @media screen and (max-width: 1300px) {
 
