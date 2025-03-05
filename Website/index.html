@@ -48,37 +48,31 @@
                 });
 
                 function myFunction(element) {
-    var popup = element.querySelector(".popuptext");
+                var popup = element.querySelector(".popuptext");
     
-    // Close any other open popups
-    document.querySelectorAll(".popuptext").forEach(p => {
-        if (p !== popup) {
-            p.classList.remove("show");
-        }
-    });
+                // Close any other open popups
+                document.querySelectorAll(".popuptext").forEach(p => {
+                if (p !== popup) {
+                p.classList.remove("show");
+                }
+                });
 
-    // Toggle current popup
-    popup.classList.toggle("show");
+                // Toggle current popup
+                popup.classList.toggle("show");
 
-    // Adjust position dynamically if content is long
-    if (popup.classList.contains("show")) {
-        let popupHeight = popup.offsetHeight;
-        let spaceAbove = element.getBoundingClientRect().top;
-        if (spaceAbove < popupHeight + 20) {
-            popup.style.bottom = "auto";
-            popup.style.top = "110%"; /* Moves below if not enough space above */
-        } else {
-            popup.style.bottom = "130%";
-            popup.style.top = "auto";
-        }
-    }
-}
-
-
-
-
-
-
+                // Adjust position dynamically if content is long
+                if (popup.classList.contains("show")) {
+                let popupHeight = popup.offsetHeight;
+                let spaceAbove = element.getBoundingClientRect().top;
+                if (spaceAbove < popupHeight + 20) {
+                popup.style.bottom = "auto";
+                popup.style.top = "110%"; /* Moves below if not enough space above */
+                } else {
+                popup.style.bottom = "130%";
+                popup.style.top = "auto";
+                }
+                }
+                }
             </script>
         </div>
 
